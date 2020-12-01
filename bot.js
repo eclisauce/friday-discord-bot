@@ -13,10 +13,10 @@ client.on('message', msg => {
   const myDate = new Date();
   if(msg.content === "!is it friday?") {
     if(myDate.getDay() == 5) {
-      channels.cache.find(channel => channel.name === 'dankestmemes').send('Yes its friday')
+      client.channels.cache.find(channel => channel.name === 'dankestmemes').send('Yes its friday')
     }
     else {
-      channels.cache.find(channel => channel.name === 'dankestmemes').send('No its not')
+      client.channels.cache.find(channel => channel.name === 'dankestmemes').send('No its not')
     }
 
   }
