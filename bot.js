@@ -26,12 +26,12 @@ client.on('message', msg => {
 });
 
 let scheduledMessageWednesday = new cron.CronJob('00 00 18 * * 3', () => {
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send(wedensdayVideo");
+  client.channels.cache.find(channel => channel.name === 'dankestmemes').send(wedensdayVideo);
   client.channels.cache.find(channel => channel.name === 'dankestmemes').send("it is Wednesday");
 });
 
 let scheduledMessageThursday = new cron.CronJob('00 00 18 * * 4', () => {
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send(thursdayVideo");
+  client.channels.cache.find(channel => channel.name === 'dankestmemes').send(thursdayVideo);
   client.channels.cache.find(channel => channel.name === 'dankestmemes').send("@Skion#4950");
 });
 
