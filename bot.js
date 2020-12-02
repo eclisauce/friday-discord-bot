@@ -25,23 +25,20 @@ client.on('message', msg => {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send('No its not')
     }
   }
-
-  if(msg.content === "!time") {
-      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(time)
-  }
 });
 
-let scheduledMessageWednesday = new cron.CronJob('00 00 18 * * 3', () => {
+// seconds, minutes, hours, day of month, month, day of week. Time set is in UTC (+1 for real time)
+let scheduledMessageWednesday = new cron.CronJob('00 00 17 * * 3', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(WEDENSDAY_VIDEO);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("it is Wednesday");
 });
 
-let scheduledMessageThursday = new cron.CronJob('00 00 18 * * 4', () => {
+let scheduledMessageThursday = new cron.CronJob('00 00 17 * * 4', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(THURSDAY_VIDEO);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(SKION);
 });
 
-let scheduledMessageFriday = new cron.CronJob('00 00 12 * * 5', () => {
+let scheduledMessageFriday = new cron.CronJob('00 00 11 * * 5', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(MUFASA_GIF);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@everyone it's friday");
 });
