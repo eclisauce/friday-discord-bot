@@ -7,6 +7,7 @@ const client = new Discord.Client({})
 const mufasaGif = "https://tenor.com/view/mufasa-ghost-cousinskeether-mood-gif-14812360";
 const thursdayVideo = "https://www.youtube.com/watch?v=qcYTzV4HCyk";
 const wedensdayVideo = "https://www.youtube.com/watch?v=du-TY1GUFGk";
+const DISCORD_CHANNEL = process.env.DISCORD_CHANNEL
 
 client.on("ready", () => {
   console.log("Our bot is ready to go!!!!")
@@ -16,28 +17,28 @@ client.on('message', msg => {
   const myDate = new Date();
   if(msg.content === "!is it friday?") {
     if(myDate.getDay() == 5) {
-      client.channels.cache.find(channel => channel.name === 'dankestmemes').send('Yes its friday')
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send('Yes its friday')
     }
     else {
-      client.channels.cache.find(channel => channel.name === 'dankestmemes').send('No its not')
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send('No its not')
     }
 
   }
 });
 
 let scheduledMessageWednesday = new cron.CronJob('00 00 18 * * 3', () => {
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send(wedensdayVideo);
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send("it is Wednesday");
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(wedensdayVideo);
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("it is Wednesday");
 });
 
 let scheduledMessageThursday = new cron.CronJob('00 00 18 * * 4', () => {
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send(thursdayVideo);
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send("@Skion#4950");
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(thursdayVideo);
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@Skion#4950");
 });
 
 let scheduledMessageFriday = new cron.CronJob('00 00 12 * * 5', () => {
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send(mufasaGif);
-  client.channels.cache.find(channel => channel.name === 'dankestmemes').send("@everyone it's friday");
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(mufasaGif);
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@everyone it's friday");
 });
 
 scheduledMessageWednesday.start();
