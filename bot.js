@@ -33,7 +33,7 @@ let scheduledMessageWednesday = new cron.CronJob('00 00 18 * * 3', () => {
 
 let scheduledMessageThursday = new cron.CronJob('00 00 18 * * 4', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(thursdayVideo);
-  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@Skion#4950");
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(process.env.SKION);
 });
 
 let scheduledMessageFriday = new cron.CronJob('00 00 12 * * 5', () => {
