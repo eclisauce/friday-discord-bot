@@ -16,6 +16,7 @@ client.on("ready", () => {
 
 client.on('message', msg => {
   const myDate = new Date();
+  const time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
   if(msg.content === "!is it friday?") {
     if(myDate.getDay() == 5) {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send('Yes its friday')
@@ -23,7 +24,10 @@ client.on('message', msg => {
     else {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send('No its not')
     }
+  }
 
+  if(msg.content === "!time") {
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(time)
   }
 });
 
