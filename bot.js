@@ -7,8 +7,10 @@ const client = new Discord.Client({})
 const MUFASA_GIF = process.env.MUFASA_GIF;
 const THURSDAY_VIDEO = process.env.THURSDAY_VIDEO;
 const WEDENSDAY_VIDEO = process.env.WEDENSDAY_VIDEO;
-const DISCORD_CHANNEL = process.env.DISCORD_CHANNEL
-const SKION = process.env.SKION
+const DISCORD_CHANNEL = process.env.DISCORD_CHANNEL;
+const SKION = process.env.SKION;
+const NOT_FRIDAY= process.env.NOT_FRIDAY;
+const HAPPY_FRIDAY= process.env.HAPPY_FRIDAY;
 
 client.on("ready", () => {
   console.log("Our bot is ready to go!!!!")
@@ -20,9 +22,11 @@ client.on('message', msg => {
   if(msg.content === "!is it friday?") {
     if(myDate.getDay() == 5) {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send('Yes its friday')
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(HAPPY_FRIDAY)
     }
     else {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send('No its not')
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(NOT_FRIDAY)
     }
   }
 });
