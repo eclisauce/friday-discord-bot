@@ -2,7 +2,7 @@ require("dotenv").config();
 const cron = require('cron');
 
 const Discord = require("discord.js")
-const client = new Discord.Client({})
+const client = new Discord.Client({disableEveryone: False})
 
 const MUFASA_GIF = process.env.MUFASA_GIF;
 const THURSDAY_VIDEO = process.env.THURSDAY_VIDEO;
@@ -11,6 +11,7 @@ const DISCORD_CHANNEL = process.env.DISCORD_CHANNEL;
 const SKION = process.env.SKION;
 const NOT_FRIDAY= process.env.NOT_FRIDAY;
 const HAPPY_FRIDAY= process.env.HAPPY_FRIDAY;
+const MERRY_CHRISTMAS = process.env.MERRY_CHRISTMAS;
 
 client.on("ready", () => {
   console.log("Our bot is ready to go!!!!")
@@ -45,6 +46,12 @@ let scheduledMessageThursday = new cron.CronJob('00 00 17 * * 4', () => {
 let scheduledMessageFriday = new cron.CronJob('00 00 11 * * 5', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(MUFASA_GIF);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@everyone it's friday");
+});
+
+let scheduledMessageFriday = new cron.CronJob('00 00 14 24 12 *', () => {
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(MERRY_CHRISTMAS);
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@everyone Merry christmas boys");
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("On real christmas");
 });
 
 scheduledMessageWednesday.start();
