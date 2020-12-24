@@ -48,7 +48,7 @@ let scheduledMessageFriday = new cron.CronJob('00 00 11 * * 5', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@everyone it's friday");
 });
 
-let scheduledMessageFriday = new cron.CronJob('00 00 14 24 12 *', () => {
+let scheduledMessageChristmas = new cron.CronJob('00 00 14 24 12 *', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send(MERRY_CHRISTMAS);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("@everyone Merry christmas boys");
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL).send("On real christmas");
@@ -56,6 +56,7 @@ let scheduledMessageFriday = new cron.CronJob('00 00 14 24 12 *', () => {
 
 scheduledMessageWednesday.start();
 scheduledMessageThursday.start();
-scheduledMessageFriday.start()
+scheduledMessageFriday.start();
+scheduledMessageChristmas.start();
 
 client.login(process.env.BOT_TOKEN)
