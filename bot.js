@@ -19,15 +19,29 @@ const PEPO_CLAP_GIF = process.env.PEPO_CLAP_GIF;
 const OFFICE_GIF = process.env.OFFICE_GIF;
 
 
+const getDay = () => {
+  const d = new Date();
+  const weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  return weekday[d.getDay()];
+  
+}
+
 client.on("ready", () => {
   console.log("Our bot is ready to go!!!!")
 });
 
 client.on('message', msg => {
   const myDate = new Date();
-  const time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
-  if(msg.content === "!is it friday?") {
-    if(myDate.getDay() === 5) {
+  if(msg.content === "!friday") {
+    if(getDay = "Friday") {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send('Yes its friday');
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(HAPPY_FRIDAY);
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(MUFASA_SONG_LINK);
@@ -48,9 +62,8 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   const myDate = new Date();
-  const time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
   if(msg.content === "!raid") {
-    if(myDate.getDay() === 1 || 3 || 4) {
+    if(getDay = "Monday" || "Wednesday" || "Thursday") {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send('Raid today');
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send(PEPO_CLAP_GIF);
     }
