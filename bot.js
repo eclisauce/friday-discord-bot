@@ -17,10 +17,7 @@ const MUFASA_SONG_LINK = process.env.MUFASA_SONG_LINK;
 const SPIN_GIF = process.env.SPIN_GIF;
 const PEPO_CLAP_GIF = process.env.PEPO_CLAP_GIF;
 const OFFICE_GIF = process.env.OFFICE_GIF;
-const ROLE_RAIDER = process.env.ROLE_RAIDER;
-const ROLE_TRIAL = process.env.ROLE_TRIAL;
-const ROLE_VETERAN = process.env.ROLE_VETERAN;
-const ROLE_OFFICER = process.env.ROLE_OFFICER;
+
 
 client.on("ready", () => {
   console.log("Our bot is ready to go!!!!")
@@ -45,7 +42,6 @@ client.on('message', msg => {
 client.on('message', msg => {
   if(msg.content === "!spin") {
     client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(SPIN_GIF);
-    client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(ROLE_OFFICER, ROLE_VETERAN, ROLE_RAIDER, ROLE_TRIAL);
   }
 });
 
@@ -53,7 +49,7 @@ client.on('message', msg => {
 client.on('message', msg => {
   const myDate = new Date();
   const time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
-  if(msg.content === "!is it friday?") {
+  if(msg.content === "!raid") {
     if(myDate.getDay() === 1 || 3 || 4) {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send('Raid today');
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send(PEPO_CLAP_GIF);
