@@ -2,7 +2,7 @@ require("dotenv").config();
 const cron = require('cron');
 
 const Discord = require("discord.js")
-const client = new Discord.Client({disableEveryone: False})
+const client = new Discord.Client({disableEveryone: false})
 
 const MUFASA_GIF = process.env.MUFASA_GIF;
 const THURSDAY_VIDEO = process.env.THURSDAY_VIDEO;
