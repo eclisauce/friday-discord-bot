@@ -45,7 +45,7 @@ client.on('message', msg => {
 client.on('message', msg => {
   if(msg.content === "!spin") {
     client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(SPIN_GIF);
-    client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(ROLE_OFFICER);
+    client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(ROLE_OFFICER, ROLE_VETERAN, ROLE_RAIDER, ROLE_TRIAL);
   }
 });
 
