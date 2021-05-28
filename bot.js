@@ -41,7 +41,7 @@ client.on("ready", () => {
 client.on('message', msg => {
   const myDate = new Date();
   if(msg.content === "!friday") {
-    if(getDay = "Friday") {
+    if(getDay === "Friday") {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send('Yes its friday');
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(HAPPY_FRIDAY);
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(MUFASA_SONG_LINK);
@@ -63,7 +63,7 @@ client.on('message', msg => {
 client.on('message', msg => {
   const myDate = new Date();
   if(msg.content === "!raid") {
-    if(getDay = "Monday" || "Wednesday" || "Thursday") {
+    if(getDay === "Monday" || "Wednesday" || "Thursday") {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send('Raid today');
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send(PEPO_CLAP_GIF);
     }
