@@ -12,7 +12,7 @@ const SKION = process.env.SKION;
 const NOT_FRIDAY= process.env.NOT_FRIDAY;
 const HAPPY_FRIDAY= process.env.HAPPY_FRIDAY;
 const MERRY_CHRISTMAS = process.env.MERRY_CHRISTMAS;
-const UFASA_SONG_LINK = process.env.MUFASA_SONG_LINK;
+const MUFASA_SONG_LINK = process.env.MUFASA_SONG_LINK;
 
 client.on("ready", () => {
   console.log("Our bot is ready to go!!!!")
