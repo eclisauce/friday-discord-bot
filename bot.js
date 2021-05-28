@@ -62,7 +62,7 @@ client.on('message', msg => {
 client.on('message', msg => {
   const myDate = new Date();
   if(msg.content === "!raid") {
-    if(getDay() === "Monday" || "Wednesday" || "Thursday") {
+    if(getDay() === ("Monday" || "Wednesday" || "Thursday")) {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send('Raid today');
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send(PEPO_CLAP_GIF);
     }
