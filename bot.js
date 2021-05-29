@@ -17,6 +17,7 @@ const MUFASA_SONG_LINK = process.env.MUFASA_SONG_LINK;
 const SPIN_GIF = process.env.SPIN_GIF;
 const PEPO_CLAP_GIF = process.env.PEPO_CLAP_GIF;
 const OFFICE_GIF = process.env.OFFICE_GIF;
+const POOL_DANCE = process.env.POOL_DANCE;
 
 
 const getDay = () => {
@@ -44,6 +45,10 @@ client.on('message', msg => {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send('Yes its friday');
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(HAPPY_FRIDAY);
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(MUFASA_SONG_LINK);
+    }
+    else if(getDay() === ("Saturday" || "Sunday")) {
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send('Nope, but it is the weekend')
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send(POOL_DANCE);
     }
     else {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send('No its not')
