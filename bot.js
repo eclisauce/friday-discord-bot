@@ -48,7 +48,7 @@ client.on('message', msg => {
     }
     else if(getDay() === ("Saturday" || "Sunday")) {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send('Nope, but it is the weekend')
-      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_RAID).send(POOL_DANCE);
+      client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(POOL_DANCE);
     }
     else {
       client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send('No its not')
