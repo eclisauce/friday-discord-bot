@@ -10,6 +10,7 @@ const WEDENSDAY_VIDEO = process.env.WEDENSDAY_VIDEO;
 const DISCORD_CHANNEL_DANKESTMEMES = process.env.DISCORD_CHANNEL_DANKESTMEMES;
 const DISCORD_CHANNEL_RAID = process.env.DISCORD_CHANNEL_RAID;
 const SKION = process.env.SKION;
+const RINK = process.env.RINK;
 const NOT_FRIDAY= process.env.NOT_FRIDAY;
 const HAPPY_FRIDAY= process.env.HAPPY_FRIDAY;
 const MERRY_CHRISTMAS = process.env.MERRY_CHRISTMAS;
@@ -18,6 +19,7 @@ const SPIN_GIF = process.env.SPIN_GIF;
 const PEPO_CLAP_GIF = process.env.PEPO_CLAP_GIF;
 const OFFICE_GIF = process.env.OFFICE_GIF;
 const POOL_DANCE = process.env.POOL_DANCE;
+const WHAT = process.env.WHAT;
 
 
 const getDay = () => {
@@ -60,6 +62,13 @@ client.on('message', msg => {
 client.on('message', msg => {
   if(msg.content === "!spin") {
     client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(SPIN_GIF);
+  }
+});
+
+client.on('message', msg => {
+  if(msg.content === "!rink") {
+    client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(WHAT);
+    client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(RINK);
   }
 });
 
