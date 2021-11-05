@@ -88,17 +88,17 @@ client.on('message', msg => {
 });
 
 // seconds, minutes, hours, day of month, month, day of week. Time set is in UTC (+1 for real time)
-let scheduledMessageWednesday = new cron.CronJob('00 00 16 * * 3', () => {
+let scheduledMessageWednesday = new cron.CronJob('00 00 17 * * 3', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(WEDENSDAY_VIDEO);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send("it is Wednesday my dudes");
 });
 
-let scheduledMessageThursday = new cron.CronJob('00 00 16 * * 4', () => {
+let scheduledMessageThursday = new cron.CronJob('00 00 17 * * 4', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(THURSDAY_VIDEO);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(SKION);
 });
 
-let scheduledMessageFriday = new cron.CronJob('00 00 10 * * 5', () => {
+let scheduledMessageFriday = new cron.CronJob('00 00 11 * * 5', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(MUFASA_GIF);
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send("@everyone" + "it's friday");
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(MUFASA_SONG_LINK);
