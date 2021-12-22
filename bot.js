@@ -95,7 +95,6 @@ let scheduledMessageWednesday = new cron.CronJob('00 00 17 * * 3', () => {
 
 let scheduledMessageThursday = new cron.CronJob('00 00 17 * * 4', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(THURSDAY_VIDEO);
-  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(SKION);
 });
 
 let scheduledMessageFriday = new cron.CronJob('00 00 11 * * 5', () => {
@@ -106,8 +105,7 @@ let scheduledMessageFriday = new cron.CronJob('00 00 11 * * 5', () => {
 
 let scheduledMessageChristmas = new cron.CronJob('00 00 14 24 11 *', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(MERRY_CHRISTMAS);
-  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send("@everyone" + "Merry christmas boys");
-  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send("On real christmas");
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send("@everyone" + "Merry christmas folks");
 });
 
 scheduledMessageWednesday.start();
