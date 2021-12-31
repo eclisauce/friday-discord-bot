@@ -20,7 +20,7 @@ const PEPO_CLAP_GIF = process.env.PEPO_CLAP_GIF;
 const OFFICE_GIF = process.env.OFFICE_GIF;
 const POOL_DANCE = process.env.POOL_DANCE;
 const WHAT = process.env.WHAT;
-
+const HAPPY_NEW_YEAR = process.env.HAPPY_NEW_YEAR;
 
 const getDay = () => {
   const d = new Date();
@@ -108,9 +108,15 @@ let scheduledMessageChristmas = new cron.CronJob('00 00 14 24 11 *', () => {
   client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send("@everyone" + "Merry christmas folks");
 });
 
+let scheduledMessageNewYear = new cron.CronJob('00 00 0 1 0 *', () => {
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send(HAPPY_NEW_YEARS);
+  client.channels.cache.find(channel => channel.name === DISCORD_CHANNEL_DANKESTMEMES).send("@everyone" + "Happy new year");
+});
+
 scheduledMessageWednesday.start();
 scheduledMessageThursday.start();
 scheduledMessageFriday.start();
 scheduledMessageChristmas.start();
+scheduledMessageNewYear.start();
 
 client.login(process.env.BOT_TOKEN)
